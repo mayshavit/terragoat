@@ -2,7 +2,7 @@
 data "aws_caller_identity" "current" {}
 
 variable "company_name" {
-  default = "acme"
+  default = "acme_test"
 }
 
 variable "environment" {
