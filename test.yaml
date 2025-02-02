@@ -1,0 +1,11 @@
+  DataBucket:
+    # Public, not encrypted, no access logs, no versioning
+    # checkov:skip=CKV_AWS_56: not needed
+    Type: AWS::S3::Bucket
+    DeletionPolicy: Delete
+    Properties:
+      BucketName: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}-data"
+      AccessControl: PublicRead
+      Tags:
+        - Key: Name
+          Value: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}-data"
